@@ -1,0 +1,10 @@
+<h3>Account Type</h3>
+<form [formGroup]="formGroup" novalidate>
+    <ul>
+      <li>
+        <input formControlName="name" type="text" placeholder="Name" required/>
+      </li>
+    </ul>
+    <button type="button" (click)="update()">Accept</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+</form>

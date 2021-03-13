@@ -1,0 +1,58 @@
+  
+ ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  
+ li {
+   //  border-bottom: 2px solid;
+    text-decoration: none;
+  }
+li:last-child {
+    border-bottom: none;
+  }
+  /* The navigation menu links */
+  a {
+    padding: 6px 8px 6px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+a:hover {
+    color: #ffffff;
+    font-size: 30px;
+    background-color: #222222;
+  }
+  
+span {
+    padding: 6px 8px 6px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+span:hover {
+    color: #ffffff;
+    font-size: 30px;
+    background-color: #222222;
+  }
+
+  
+  /* On smaller screens, where height is less than 450px, 
+  change the style of the sidebar 
+  (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    a {font-size: 18px;}
+    a:hover {font-size: 20px;}
+  }

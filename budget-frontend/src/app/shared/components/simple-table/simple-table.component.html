@@ -1,0 +1,20 @@
+<table class="greenTable">
+    <thead>
+        <th [hidden]="!deleteAction"></th>
+        <th [hidden]="!editAction"></th>
+        <th *ngFor="let column of columns" >{{column}}</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let record of records">
+            <td [hidden]="!deleteAction"><button (click)="deleteRecord(record['id'])">Del</button></td>
+            <td [hidden]="!editAction"><button (click)="editRecord(record['id'])">Edi</button></td>
+            <td *ngFor="let column of columns">{{getValue(record,column)}}</td>
+        </tr>
+    </tbody>
+    <tfoot [hidden]="!addAction">
+        <td [hidden]="!deleteAction"></td>
+        <td [hidden]="!editAction"></td>
+        <td *ngFor="let column of columns.slice(1)" ></td>
+        <td><button (click)="addRecord()">+</button></td>
+    </tfoot>
+</table>

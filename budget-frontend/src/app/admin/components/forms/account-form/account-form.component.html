@@ -1,0 +1,17 @@
+<h3>Account</h3>
+<form [formGroup]="formGroup" novalidate>
+  <ul>
+    <li>
+      <input formControlName="name" type="text" placeholder="Name" required/>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <select formControlName="accountType"  required >
+        <option *ngFor="let accountType of accountTypes" value="{{accountType.id}}">{{accountType.name}}</option>
+      </select>
+    </li>
+  </ul>
+    <button type="button" (click)="update()">Accept</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+</form>

@@ -1,0 +1,9 @@
+<span (click)="toggleView()">{{openState?'x':'+'}}{{content.title}}</span>
+<ul [@toggleBox]="openState?'open':'closed'">
+    <li  *ngFor="let link of content.links">
+        <a routerLink="{{link.url}}" routerLinkActive="active">{{link.title}}</a>
+    </li>
+    <li *ngFor="let segment of content.segments">
+        <app-side-menu-segment [content]="segment"></app-side-menu-segment>
+    </li>
+</ul>

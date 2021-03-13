@@ -1,0 +1,47 @@
+Future Balance Budget App
+
+Note: use [property] to pass complicated values
+
+
+=== Admin Can Control Meta
+Database:
+DONE Table -> Account Types (Admin)  
+Table -> Categories (Admin)
+Table   \-> Subcategories (Admin)
+    Hierarchy
+    \-> Bill
+        \-> Mobile
+        \-> Utilities...
+    \-> Income
+        \-> Payday
+        \-> Other
+    \-> Savings
+        \-> Retirement
+        \-> Savings
+    \-> Debt
+        \-> Mortgage
+        \-> Credit Card
+    \-> Assets
+        \-> Cars
+        \-> Home
+    
+Table -> Repeat
+            \-> Weekly, Monthly, day of the week, #-weekly, day of the month (from start or end), Semi-Monhtly, #-Monthly
+Table -> PlanTransactions (User) [Id, Repeat, Start, Stop, Account+,Account-, ]
+        \-> Repeat, Single, Change overtime, Start Stop date, account runs out of money (take in account of finaly payment)  
+        \-> Transfers and Debt Payment      
+Table -> TransactionHistory (User) [Id, PlanTransaction, State, Amount, Datetime, Last Modified]
+Table -> TransactionState [Id, Name, Final]
+        \-> Billed, Sent, Cleared, Delete, Adapted
+Table -> Accounts (User)[Id, AccountType, Name, Start Value, Datetime, Last Modified]
+        \-> Interest rates
+
+
+1) (DONE) Basic auth - https://howtodoinjava.com/spring-boot2/security-rest-basic-auth-example/
+2) Create Admin Pages to edit the tables above
+    2.a) (DONE) Create drop down menu to select different tables
+    2.b) Create basic page to edit/update each tables
+3) Create Simple Page to generate future transaction list for 60 days (generate from PlanTransactions)
+4) Allow checkoff of transactions with exact values
+5) Create graphs of growth and net value
+

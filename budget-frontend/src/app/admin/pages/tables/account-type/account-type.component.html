@@ -1,0 +1,18 @@
+<app-pop-up #PopUpRecordForm [tplRef]="MyFormTemplate"></app-pop-up>
+<app-pop-up #PopUpConfirm [tplRef]="ConfirmTemplate"></app-pop-up>
+<ng-template #MyFormTemplate>
+        <app-account-type-form #RecordForm (created)="updateRecord($event)" ></app-account-type-form>
+</ng-template>
+<ng-template #ConfirmTemplate>
+        <h1>Delete {{selectedRecord?.name}} ?</h1>
+        <button (click)="confirmDeleteRecord(true)">Confirm</button>
+        <button (click)="confirmDeleteRecord(false)">Cancel</button>
+</ng-template>
+<h1>Account Types</h1>
+<app-simple-table 
+        [columns]='["name"]'
+        [records]='records'
+        [addAction]='addRecord.bind(this)'
+        [editAction]='editRecord.bind(this)'
+        [deleteAction]='deleteRecord.bind(this)'>
+</app-simple-table>
